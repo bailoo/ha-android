@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="edittext_bg">#ffffff</color>
+    <color name="edittext_border_color">#d3d3d3</color> 
+    <color name="edittext_text_color">#000000</color>
+    <color name="edittext_hint_color">#d3d3d3</color>
+    <color name="colorPrimary">#0895a7</color>
+    <color name="colorPrimaryDark">#078191</color>
+    <color name="colorAccent">#0895a7</color>   
+    <color name="table_title_color">#00bcd5</color>   
+    <color name="setting_divider">#232323</color>
+    <color name="setting_text">#cccccc</color>
+</resources>

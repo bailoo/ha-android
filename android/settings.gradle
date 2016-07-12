@@ -1,0 +1,4 @@
+include ':ShapeImageLibrary'
+include ':android-support-v7-appcompat'
+include ':InventoryProject'
+include ':google-play-services_lib'

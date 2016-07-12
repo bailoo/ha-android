@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myapp="http://schemas.android.com/apk/res-auto" >
+    
+     <item android:id="@+id/action_home"
+          android:title="Home"
+          android:icon="@drawable/ic_home_32"
+          myapp:showAsAction="always" />
+    <item android:id="@+id/action_edit"
+          android:title="Edit"
+          myapp:showAsAction="never" />
+
+    <item android:id="@+id/action_search"
+          android:title="Search"
+          myapp:showAsAction="never" />
+
+    <item android:id="@+id/action_report"
+          android:title="Report"
+          myapp:showAsAction="never" />
+</menu>
