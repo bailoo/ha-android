@@ -1,6 +1,7 @@
 package com.mycompany.myinventory;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 
@@ -13,17 +14,19 @@ public class HomeActivity extends ActionBarActivity{
 	
 	private ApplicationStatus applicationStatus;
 	private DatabaseHandler databaseHandler;
-	
+
+
+
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {	
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home_activity);
-		
+
 		applicationStatus = new ApplicationStatus(this);
-		
+
 		if(!applicationStatus.getCurrentStartStatus()){
-			databaseHandler = new DatabaseHandler(this);			
-			
+			databaseHandler = new DatabaseHandler(this);
+
 			databaseHandler.saveCategory(new ItemsDetails("Automotive & Powersports"));
 			databaseHandler.saveCategory(new ItemsDetails("Accessories"));
 			databaseHandler.saveCategory(new ItemsDetails("Baby"));
@@ -37,14 +40,17 @@ public class HomeActivity extends ActionBarActivity{
 			databaseHandler.saveCategory(new ItemsDetails("Musical Instruments"));
 			databaseHandler.saveCategory(new ItemsDetails("Sports Collectibles"));
 			databaseHandler.saveCategory(new ItemsDetails("Toys"));
-			databaseHandler.saveCategory(new ItemsDetails("Watches"));	
+			databaseHandler.saveCategory(new ItemsDetails("Watches"));
 			applicationStatus.setCurrentStartStatus(true);
-			
-			//start background service for notification 
+
+			//start background service for notification
 			startService(new Intent(HomeActivity.this, NotifyService.class));
-		}		
-		startActivity(new Intent(HomeActivity.this, MainActivity.class));
+
+		}
+		startActivity(new Intent(HomeActivity.this, LoginActivity.class));
 		finish();
 	}
+
+
 
 }

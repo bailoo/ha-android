@@ -85,15 +85,7 @@ public class EditItemActivity extends ActionBarActivity implements
 		setSupportActionBar(mToolbar);
 		getSupportActionBar().setDisplayShowHomeEnabled(true);
 		setTitle("Edit Item");
-		// ** Admob Code */
-				AdView adView = (AdView) this.findViewById(R.id.adView);
-				AdRequest request = new AdRequest.Builder().build();
-				adView.loadAd(request);
-				interstitial = new InterstitialAd(getBaseContext());
-				interstitial.setAdUnitId(getResources().getString(
-						R.string.interstitial_id));
-				interstitial.loadAd(request);
-				
+
 		itemID = getIntent().getStringExtra("KEY_ID");
 		initilizeClassVariables();
 		setResourcesView();
@@ -330,14 +322,7 @@ public class EditItemActivity extends ActionBarActivity implements
 		Bitmap bitmap = BitmapFactory.decodeFile(photoPath, options);
 		itemImage.setImageBitmap(bitmap);
 	}
-	@Override
-	public void onBackPressed() {
-		if (interstitial.isLoaded()) {
-			interstitial.show();
-		}
-		super.onBackPressed();
-	}
-	
+
 	public void showDialog() {
 
 		builder.setTitle("Choose Action!");

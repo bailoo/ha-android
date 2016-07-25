@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="loginURL">http://ganga.hotelarmy.com/users/%1$s</string>
+    <string name="preferencesUSERID">userIDKey</string>
+    <string name="preferencesPhoneNo">phoneNoKey</string>
+</resources>

@@ -47,15 +47,7 @@ public class ItemDetailActivity extends ActionBarActivity{
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         setTitle("Item Details");
-     // ** Admob Code */
-     		AdView adView = (AdView) this.findViewById(R.id.adView);
-     		AdRequest request = new AdRequest.Builder().build();
-     		adView.loadAd(request);
-     		interstitial = new InterstitialAd(getBaseContext());
-     		interstitial.setAdUnitId(getResources().getString(
-     				R.string.interstitial_id));
-     		interstitial.loadAd(request);
-     		
+
 		itemID = getIntent().getStringExtra("KEY_ID");	
 		setResourceView();
 		setResults();
@@ -94,14 +86,7 @@ public class ItemDetailActivity extends ActionBarActivity{
 		image.setImageBitmap(bitmap);
 		}
 	}
-	@Override
-	public void onBackPressed() {
-		if (interstitial.isLoaded()) {
-			interstitial.show();
-		}
-		super.onBackPressed();
-	}
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {		
 		getMenuInflater().inflate(R.menu.view_screen_menu, menu);

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mycompany.myinventory"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -15,44 +15,51 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_CALL_LOG" />
+
     <application
+        android:name ="com.mobilemerit.controller.WebServiceController"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/MyMaterialTheme" >
+        android:theme="@style/MyMaterialTheme">
         <activity
             android:name=".HomeActivity"
             android:configChanges="orientation"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.mycompany.myinventory.MainActivity"
+            android:name=".MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
-        <activity android:name="com.mycompany.myinventory.AddProductActivity" />
+        <activity android:name=".AddProductActivity" />
         <activity
-            android:name="com.mycompany.myinventory.ItemListActivity"
+            android:name=".ItemListActivity"
             android:configChanges="orientation"
             android:screenOrientation="landscape" />
-        <activity android:name="com.mycompany.myinventory.ItemDetailActivity" />
+        <activity android:name=".ItemDetailActivity" />
         <activity
-            android:name="com.mycompany.myinventory.CategoryReportActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="com.mycompany.myinventory.CategoryItemListActivity"
+            android:name=".CategoryReportActivity"
             android:configChanges="orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name="com.mycompany.myinventory.EditItemActivity" />
+            android:name=".CategoryItemListActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape" />
+        <activity android:name=".EditItemActivity" />
         <activity
-            android:name="com.mycompany.myinventory.SearchItemActivity"
+            android:name=".SearchItemActivity"
             android:configChanges="orientation"
             android:screenOrientation="landscape" />
         <activity
@@ -64,7 +71,7 @@
 
         <receiver
             android:name="com.mobilemerit.broadcast.InventoryBroadcast"
-            android:label="NetworkChangeReceiver" >
+            android:label="NetworkChangeReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
@@ -72,14 +79,18 @@
 
         <service android:name="com.mobilemerit.service.NotifyService" />
 
+
         <!-- Admob Activity -->
-        <activity
+        <!-- activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
 
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-    </application>
+            android:value="@integer/google_play_services_version" / -->
 
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"></activity>
+    </application>
 </manifest>

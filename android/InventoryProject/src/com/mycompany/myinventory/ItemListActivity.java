@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -27,6 +29,7 @@ public class ItemListActivity extends ActionBarActivity implements
 	private DatabaseHandler databaseHandler;
 	private Toolbar mToolbar;
 	public InterstitialAd interstitial;
+	SharedPreferences preferences;
 	
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,15 +39,7 @@ public class ItemListActivity extends ActionBarActivity implements
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         setTitle("Item List");
-     // ** Admob Code */
-     		AdView adView = (AdView) this.findViewById(R.id.adView);
-     		AdRequest request = new AdRequest.Builder().build();
-     		adView.loadAd(request);
-     		interstitial = new InterstitialAd(getBaseContext());
-     		interstitial.setAdUnitId(getResources().getString(
-     				R.string.interstitial_id));
-     		interstitial.loadAd(request);
-     		
+
 		listView = (ListView) findViewById(R.id.listview);
 
 		listItem = new ArrayList<ItemsDetails>();
@@ -52,6 +47,10 @@ public class ItemListActivity extends ActionBarActivity implements
 		listItem = databaseHandler.getItemsDetails();
 		adapter = new ItemListAdapter(this, listItem, getIntent().getAction());
 		listView.setAdapter(adapter);
+		preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+		System.out.println("User id in Item list is : " +preferences.getString(getString(R.string.preferencesUSERID)  ,""));
+		System.out.println("Mobile number in Item list is : " + preferences.getString(getString(R.string.preferencesPhoneNo), ""));
+
 	}
 
 	@Override
@@ -81,12 +80,5 @@ public class ItemListActivity extends ActionBarActivity implements
 		listItem.addAll(databaseHandler.getItemsDetails());
 		adapter.notifyDataSetChanged();
 	}
-	
-	@Override
-	public void onBackPressed() {
-		if (interstitial.isLoaded()) {
-			interstitial.show();
-		}
-		super.onBackPressed();
-	}
+
 }

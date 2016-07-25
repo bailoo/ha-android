@@ -5,6 +5,12 @@
           android:title="Home"
           android:icon="@drawable/ic_home_32"
           myapp:showAsAction="always" />
+
+    <item android:id="@+id/action_logout"
+        android:title="Logout"
+        android:icon="@drawable/ic_exit"
+        myapp:showAsAction="always" />
+
     <item android:id="@+id/action_edit"
           android:title="Edit"
           myapp:showAsAction="never" />

@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Inventory App.iml" filepath="$PROJECT_DIR$/Inventory App.iml" />
       <module fileurl="file://$PROJECT_DIR$/InventoryProject/InventoryProject.iml" filepath="$PROJECT_DIR$/InventoryProject/InventoryProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShapeImageLibrary/ShapeImageLibrary.iml" filepath="$PROJECT_DIR$/ShapeImageLibrary/ShapeImageLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android.iml" filepath="$PROJECT_DIR$/android.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-support-v7-appcompat/android-support-v7-appcompat.iml" filepath="$PROJECT_DIR$/android-support-v7-appcompat/android-support-v7-appcompat.iml" />
       <module fileurl="file://$PROJECT_DIR$/google-play-services_lib/google-play-services_lib.iml" filepath="$PROJECT_DIR$/google-play-services_lib/google-play-services_lib.iml" />
     </modules>
   </component>
 </project>
-
